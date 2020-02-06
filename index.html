@@ -10,14 +10,8 @@
 	<script type="text/javascript">
 function getLocation() {
 	var url = document.getElementById("url").value
-
 	// determines if the URL is valid, and if not, restarts the process
-	if (url.toLowerCase().indexOf('https:') == true || url.toLowerCase().indexOf('http:') == true) { 
-		window.open(url, "Downloading . . .");
-	} else {
-	alert('Please use a URL which contains https:// or http://');
-	location.reload(forceGet);
-	}
+	window.open(url, "Downloading . . .");
 }
 	</script>
 	<div class="container">
