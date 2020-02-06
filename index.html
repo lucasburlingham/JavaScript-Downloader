@@ -9,12 +9,10 @@
 <body>
 <script type="text/javascript">
 function getLocation() {
-  //declares the constant for entry prompt
-  const promptText = print('<form><input type="text">Please enter the full address of the file to download: <input><form>');
-  //asks user for input and stores it in the 'url' variable
-  var url = (document.getElementById("url").value)
-  // determines if the URL is valid, and if not, restarts the process
-  if (url.toLowerCase().indexOf('https:') == true || url.toLowerCase().indexOf('http:') == true) { 
+	var url = document.getElementById("url").value
+	
+	// determines if the URL is valid, and if not, restarts the process
+	if (url.toLowerCase().indexOf('https:') == true || url.toLowerCase().indexOf('http:') == true) { 
 	window.open(url);
 	} else {
 	alert('Please use a URL which contains https:// or http://');
@@ -22,25 +20,20 @@ function getLocation() {
   }
 }
   </script>
-  
-<div class="jumbotron">
-<h1>JavaScript Downloader</h1>
-</div>
-<h3>
-	<p>Enter the URL to download:</p>
-	<form>
-	<input id="url">
-	
-	
-	
-	<input type="submit">
-	</form>
-	
-	
-
-</h3>
+<div class="container">
+	<div class="jumbotron">
+		<h1>JavaScript Downloader</h1>
+	</div>
+	<h3>
+		<p>Enter the URL to download:</p>
+		<form>
+		<input id="url">
+		<input type="submit">
+		</form>
+	</h3>
 	</body>
 	<footer style="text-align: center; padding-top: 100px; padding-bottom: 5px;">
-<p>(C) Jovark Industries 2020</p>
-</footer>
+		<p>(C) Jovark Industries 2020</p>
+	</footer>
+	</div>
 </html>
