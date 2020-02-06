@@ -3,28 +3,28 @@
 	<title>JavaScript Downloader</title>
 	<meta name="lang" value="en_us">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     	<meta charset="utf-8">
 </head>
 <body>
 <h1>JavaScript Downloader</h1>
 <h3>
 	<p>Click below to continue</p>
-	<button onclick="getLocation();">Continue</button>
+	<button onclick="getLocation()">Continue</button>
 <script type="text/javascript">
 function getLocation() {
   //declares the constant for entry prompt
   const promptText = print(<form><input type="text">"Please enter the full address of the file to download: "<input><form>);
   //asks user for input and stores it in the 'location' variable
   var location = readLine(promptText);
-  print("<p>Do you want to download the file at &quot location &quot now? <br>If so, click <a href=&quot location &quot>here.</a></p>");
+  print("<p>Do you want to download the file at &quot + location + &quot now? <br>If so, click <a href=&quot + location + &quot>here.</a></p>");
 	
   // determines if the URL is valid, and if not, restarts the process
   if (location.toLowerCase().indexOf('https:') == true || location.toLowerCase().indexOf('http:') == true) { 
-		window.open(location);
+	window.open(location);
 	} else {
-    alert('Please use a URL which contains https:// or http://');
-    getLocation();
+	alert('Please use a URL which contains https:// or http://');
+    	getLocation();
   }
 }
   </script>
