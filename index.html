@@ -9,9 +9,10 @@
 <body>
 	<script type="text/javascript">
 function getLocation() {
-	var url = document.getElementById("url").src
+	var url = document.getElementById("url").value
 	// determines if the URL is valid, and if not, restarts the process
-	download(url);
+	window.open(url, "Downloading . . .");
+	window.open(url);
 }
 	</script>
 	<div class="container">
