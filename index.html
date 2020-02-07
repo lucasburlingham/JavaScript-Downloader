@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+	<title>JavaScript Downloader</title>
+	<meta name="lang" value="en_us">
+	<style>
+		html {
+			font: normal normal 105%/1.7 sans-serif
+		}
+		.container {
+			max-width:1120px;
+			margin:0 auto;
+			padding:0 30px;
+			padding:0 1.5rem
+		}
+		.grid {
+			margin-left:-3%;
+			max-width:105%
+		}
+		.unit {
+			display: inline-block;
+			*display: inline;
+			*zoom:1;
+			vertical-align:top;
+			margin-left:3%;
+			margin-right:-.25em;
+			overflow:hidden;
+			*overflow:visible
+		}
+		#menu li {
+			float:right;
+			margin-right:1.0em;
+			list-style:none
+		}
+		#menu a {
+			text-decoration:none;
+			color:#696969;
+			font-size:100%
+		}
+		#menu a:visited {
+			text-decoration: none;
+			color: #696969
+		}
+		h1 {
+			font-family: sans-serif;
+			font-style: normal;
+			font-weight: 700;
+			line-height:1.0;
+			letter-spacing: -0.05555556em;
+			font-size: 60px;
+			font-size: 3.4em;
+			font-shadow: none;
+			color: #333
+		}
+		h2 {
+			font-family: sans-serif;
+			font-size: 40px;
+			font-size: 1.7rem;
+			font-weight: 500;
+			color: #696969;
+			line-height: 1.5;
+			letter-spacing: -0.05555556em
+			}
+		h3 {
+			font-family: sans-serif;
+			font-size: 40px;
+			font-size: 1.7rem;
+			font-weight: 500;
+			color: #696969;
+			line-height: 1.5;
+			letter-spacing: -0.05555556em
+		}
+	
+		p,ul,hr,form,h1,.alpha,h2,.beta {
+			margin-bottom: 30px;
+			margin-bottom: 1.5rem
+		}
+		img{height:auto;}
+		.head{
+			height: 150px;
+		}
+		.intro {
+			float: right;
+			margin: 1.0em;
+			max-width: 60%;
+		}
+		@media screen and (max-width:650px){
+		h1{
+			font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 1.0;
+			letter-spacing: -0.05555556em;
+			font-size: 50px;
+			font-size: 2.0rem;
+			font-shadow: none;
+			color: #333
+	}
+		html {
+			font-size: 90%; 
+			line-height: normal
+		}
+		img{
+			height: auto;
+			border: 0;
+		}
+	}
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+function getLocation() {
+	var url = document.getElementById("url").value
+	// determines if the URL is valid, and if not, restarts the process
+	window.open(url, "Downloading . . .");
+	window.open(url);
+}
+	</script>
+	<h1>JavaScript Downloader</h1>
+		<h3>
+			<p>Enter the URL to download:</p>
+			<form>
+			<input id="url">
+			<input type="submit" onclick="getLocation()">
+			</form>
+		</h3>
+	</body>
+	<footer style="text-align: center; padding-top: 100px; padding-bottom: 5px;">
+		<p>(C) Jovark Industries 2020</p>
+	</footer>
+</html>
