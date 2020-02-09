@@ -148,9 +148,7 @@
 	<script type="text/javascript">
 function getLocation() {
 	var url = document.getElementById("url").value
-	// determines if the URL is valid, and if not, restarts the process
-	window.open(url, "Downloading . . .");
-	window.open(url);
+	download(url, "Downloading . . .");
 }
 	</script>
 	<div class="jumbotron"
