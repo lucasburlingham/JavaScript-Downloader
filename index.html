@@ -18,27 +18,34 @@
     font-size: @jumbotron-font-size;
     font-weight: 200;}
  
-  hr {border-top-color: darken(@jumbotron-bg, 10%);}
- 
-  .container &,
-  .container-fluid & {
-    border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container
-    padding-left:  (@grid-gutter-width / 2);
-    padding-right: (@grid-gutter-width / 2);
-  }
- 
-  .container {max-width: 100%;}
- 
+  hr {border-top-color: darken(@jumbotron-bg, 10%);
+	}
+
+	jumbotron {
+		padding:2rem 1rem;
+		margin-bottom:2rem;
+		background-color:#e9ecef;
+		border-radius:.3rem
+	} 
+	@media (min-width:576px){
+		.jumbotron{
+			padding:4rem 2rem
+		}
+	}
+	.jumbotron-fluid{
+		padding-right:0;
+		padding-left:0;
+		border-radius:0
+		}
   @media screen and (min-width: @screen-sm-min) {
     padding-top:    (@jumbotron-padding * 1.6);
     padding-bottom: (@jumbotron-padding * 1.6);
- 
-    .container, .container-fluid  {
-      padding-left:  (@jumbotron-padding * 2);
-      padding-right: (@jumbotron-padding * 2);}
- 
+	    .container, .container-fluid  {
+	      padding-left:  (@jumbotron-padding * 2);
+	      padding-right: (@jumbotron-padding * 2);
+		  }
     h1, .h1 {font-size: @jumbotron-heading-font-size;}
-}
+	}
 		html {
 			font: normal normal 105%/1.7 sans-serif
 		}
@@ -47,20 +54,6 @@
 			margin:0 auto;
 			padding:0 30px;
 			padding:0 1.5rem
-		}
-		.grid {
-			margin-left:-3%;
-			max-width:105%
-		}
-		.unit {
-			display: inline-block;
-			*display: inline;
-			*zoom:1;
-			vertical-align:top;
-			margin-left:3%;
-			margin-right:-.25em;
-			overflow:hidden;
-			*overflow:visible
 		}
 		#menu li {
 			float:right;
@@ -71,11 +64,7 @@
 			text-decoration:none;
 			color:#696969;
 			font-size:100%
-		}
-		#menu a:visited {
-			text-decoration: none;
-			color: #696969
-		}
+			}
 		h1 {
 			font-family: sans-serif;
 			font-style: normal;
@@ -131,15 +120,6 @@
 			font-size: 2.0rem;
 			font-shadow: none;
 			color: #333
-	}
-		html {
-			font-size: 90%; 
-			line-height: normal
-		}
-		img{
-			height: auto;
-			border: 0;
-		}
 	}
 </style>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
