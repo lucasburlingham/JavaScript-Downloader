@@ -146,11 +146,28 @@
 </head>
 <body>
 	<script type="text/javascript">
-function getLocation() {
-	var url = document.getElementById("url").value
-	download(url, "Downloading . . .");
-}
-	</script>
+ function makeRequest() {
+    httpRequest = new XMLHttpRequest();
+
+    if (!httpRequest) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+    httpRequest.onreadystatechange = alertContents;
+    httpRequest.open('GET', 'https://github.com/lucasburlingham/batterytester/archive/master.zip');
+    httpRequest.send();
+  }
+
+  function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        alert(httpRequest.responseText);
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+</script>
 	<div class="jumbotron"
 	     <center><h1>JavaScript Downloader</h1></center></div>
 		<h3>
