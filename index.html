@@ -38,26 +38,19 @@
 		<p>(C) Jovark Industries 2020</p>
 	</footer>
 <script type="text/javascript">
- function makeRequest() {
-    httpRequest = new XMLHttpRequest();
+function makeRequest(requestUrl){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", requestUrl);
+	xhr.responseType = "arraybuffer";
 
-    if (!httpRequest) {
-      alert('Giving up :( Cannot create an XMLHTTP instance');
-      return false;
-    }
-    httpRequest.onreadystatechange = alertContents;
-    httpRequest.open('GET', 'https://github.com/lucasburlingham/batterytester/archive/master.zip');
-    httpRequest.send();
-  }
-
-  function alertContents() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      if (httpRequest.status === 200) {
-        alert(httpRequest.responseText);
-      } else {
-        alert('There was a problem with the request.');
-      }
-    }
-  }
+	xhr.onload = function () {
+	    if (this.status === 200) {
+		var blob = new Blob([xhr.response], {type: "application/zip"});
+		var objectUrl = URL.createObjectURL(blob);
+		window.open(objectUrl);
+	    }
+	};
+}
+xhr.send();
 </script>
 </html>
