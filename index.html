@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+	<title>JavaScript Downloader</title>
+	<meta name="lang" value="en_us">
+	<link rel="icon" href="https://lucasburlingham.github.io/JavaScript-Downloader/favicon.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<center>
+		<div class="jumbotron">
+			<h1 style="font-family: sans-serif;
+			font-style: normal;
+			font-weight: 700;
+			line-height:1.0;
+			letter-spacing: -0.05555556em;
+			font-size: 60px;
+			font-size: 3.4em;
+			font-shadow: none;
+			color: #333;">JavaScript Downloader</h1>
+		</div>
+		<h3>
+			<p>Enter the URL to download:</p>
+		</h1>
+		<div class="">
+			<div class="form-group">
+				<form>
+					<input id="url" placeholder="http[s]:// " name="url" style="height: 30px" class="form-control"/>
+					<input type="submit" onclick="makeRequest(url)" style="text-align: center" class="btn btn-primary form-control">
+				</form>
+			</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<p>
+			<h4>Need to search something?</h4>
+
+		<form method="get" action="http://www.google.com/search">
+			<input type="text" name="q" size="32" maxlength="255" value="" />
+			<b><input type="submit" value="Google Search" class="btn btn-primary"/></b>
+		</form>
+		</p>
+
+
+	</center>
+</body>
+<footer style="text-align: center; padding-top: 100px; padding-bottom: 5px;">
+	<p>(C) Lucas Burlingham 2020</p>
+</footer>
+<script type="text/javascript">
+	function makeRequest(url) {
+		var file = new XMLHttpRequest();
+		var file = new XMLHttpRequest();
+		file.open("GET", url);
+		file.responseType = "blob";
+	
+			file.onload = function() {
+			onDownloaded(url);
+		};
+		file.send();
+</script>
+
+</html>
