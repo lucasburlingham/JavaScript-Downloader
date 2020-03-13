@@ -22,16 +22,19 @@
 			font-shadow: none;
 			color: #333;">JavaScript Downloader</h1>
 		</div>
+		<div class="row">
 		<h3>
 			<p>Enter the URL to download:</p>
 		</h1>
-		<div class="">
+		</div>
+		<div class="row">
 			<div class="form-group">
 				<form>
 					<input id="url" placeholder="http[s]:// " name="url" style="height: 30px" class="form-control"/>
 					<input type="submit" onclick="makeRequest(url)" style="text-align: center" class="btn btn-primary form-control">
 				</form>
 			</div>
+		</div>
 		</div>
 		<br>
 		<hr>
@@ -59,7 +62,7 @@
 		file.responseType = "blob";
 	
 			file.onload = function() {
-			onDownloaded(url);
+			onDownloaded();
 		};
 		file.send();
 </script>
