@@ -43,17 +43,41 @@
       (C) Lucas Burlingham 2020
    </footer>
          <script>
-      function makeRequest(url) {
+      /* function makeRequest(url) {
       	var file = new XMLHttpRequest();
       	var file = new XMLHttpRequest();
       	file.open("GET", url);
-      	file.responseType = "blob";
+      	file.responseType = "application/oc";
       
       		file.onload = function() {
       		onDownloaded();
       	};
       	file.send();
       }
+     */
+     
+/*function makeRequest(url) {
+  var element = document.createElement('a');
+  element.setAttribute('download', url);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+*/
+
+function makeRequest(url) {
+    var hiddenIFrameID = 'hiddenDownloader',
+        iframe = document.getElementById(hiddenIFrameID);
+    if (iframe === null) {
+        iframe = document.createElement('iframe');
+        iframe.id = hiddenIFrameID;
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+    }
+    iframe.src = url;
+};
+
    </script>
    </body>
 </html>
