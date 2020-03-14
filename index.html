@@ -43,7 +43,7 @@
       (C) Lucas Burlingham 2020
    </footer>
          <script>
-      function makeRequest(url) {
+      /* function makeRequest(url) {
       	var file = new XMLHttpRequest();
       	var file = new XMLHttpRequest();
       	file.open("GET", url);
@@ -54,6 +54,19 @@
       	};
       	file.send();
       }
+     */
+     
+     function makeRequest(url) {
+  var element = document.createElement('a');
+  element.setAttribute('download', url);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
    </script>
    </body>
 </html>
